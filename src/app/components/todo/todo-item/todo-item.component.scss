@@ -1,0 +1,11 @@
+.todo-item{
+    display: flex;
+    height: 20px;
+    align-items: center;
+    justify-content: space-between;
+    margin: 5px 0;
+   
+    &:hover{
+        background: white;
+    }
+}
