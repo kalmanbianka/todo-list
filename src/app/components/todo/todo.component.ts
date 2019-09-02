@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { ListItemsService } from 'src/app/services/list-items.service';
 
 @Component({
   selector: 'app-todo',
@@ -6,10 +7,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./todo.component.scss']
 })
 export class TodoComponent implements OnInit {
-
-  constructor() { }
+  currentListItems: string[] = [];
+  constructor(private listItemService: ListItemsService) { }
 
   ngOnInit() {
+    this.listItemService.listItems.subscribe((value)=> {
+      this.currentListItems = value;
+    })
   }
 
 }
