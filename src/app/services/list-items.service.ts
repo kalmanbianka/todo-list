@@ -14,4 +14,10 @@ export class ListItemsService {
     currentListItems.push(item);
     this.listItems.next(currentListItems);
   }
+
+  deleteItem(index:number) {
+    const currentListItems = this.listItems.getValue();
+    currentListItems.splice(index, 1);
+    this.listItems.next(currentListItems);
+  }
 }
